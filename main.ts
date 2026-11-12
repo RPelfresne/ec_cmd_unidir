@@ -25,7 +25,6 @@ let pauseEntreLeds = dureeMontee / nbLeds
 basic.forever(function () {
     msg_lu = msg
     if (msg_lu == "B") {
-        basic.showString("montée Bleue")
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
         strip.show()
         for (let index = 0; index < montee_1; index++) {
@@ -80,11 +79,9 @@ basic.forever(function () {
             index2 += 1
         }
     } else if (msg_lu == "R") {
-        basic.showString("Rouge")
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         strip.show()
     } else if (msg_lu == "S") {
-        basic.showString("Strobo")
         index2 = 0
         while (index2 < 3) {
             PauseAlea = randint(20, 200)
@@ -98,7 +95,6 @@ basic.forever(function () {
             index2 += 1
         }
     } else if (msg_lu == "A") {
-        basic.showString("Arret")
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
         strip.show()
         basic.pause(2000)
