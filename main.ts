@@ -1,9 +1,13 @@
 radio.onReceivedString(function (receivedString) {
     msg = receivedString
+    if (msg_lu == "B") {
+        msg = "BS"
+    }
 })
 let PauseAlea = 0
 let msg = ""
 let msg_lu = ""
+msg_lu = ""
 msg = ""
 let index2 = 0
 let index3 = 0
@@ -66,18 +70,6 @@ basic.forever(function () {
             basic.pause(randint(100, 250))
             strip.shift(1)
         }
-        index2 = 0
-        while (index2 < 3) {
-            PauseAlea = randint(10, 100)
-            strip.setBrightness(PauseAlea)
-            PauseAlea = randint(50, 100)
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-            basic.pause(PauseAlea)
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-            PauseAlea = randint(100, 500)
-            basic.pause(PauseAlea)
-            index2 += 1
-        }
     } else if (msg_lu == "R") {
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         strip.show()
@@ -98,5 +90,17 @@ basic.forever(function () {
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
         strip.show()
         basic.pause(2000)
+    } else if (msg_lu == "BS") {
+        PauseAlea = randint(10, 100)
+        strip.setBrightness(PauseAlea)
+        PauseAlea = randint(50, 100)
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        basic.pause(PauseAlea)
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        PauseAlea = randint(100, 500)
+        basic.pause(PauseAlea)
+        index2 += 1
+    } else {
+    	
     }
 })
